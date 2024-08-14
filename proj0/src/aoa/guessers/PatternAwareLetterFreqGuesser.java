@@ -10,10 +10,10 @@ import java.util.TreeMap;
 
 public class PatternAwareLetterFreqGuesser implements Guesser {
 
-    private final List<String> words;
+    private final List<String> words; /* ensures that the list of words is available wherever it’s needed within the file. */
 
     public PatternAwareLetterFreqGuesser(String dictionaryFile) {
-       /* List<String> */ this.words = FileUtils.readWords(dictionaryFile);
+       this.words = FileUtils.readWords(dictionaryFile);
     }
     public List<String> keepOnlyWordsThatMatchPattern(List<String> words, String pattern) {
         List<String> matchingwords = new ArrayList<>();
